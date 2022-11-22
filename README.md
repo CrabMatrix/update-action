@@ -14,6 +14,14 @@ Updating Major, Minor, Patch:
 
   Outputs the new Sember version with the `v` prefix. example: 'v0.1.15'
 
+- `old_version`
+
+  Outputs the old Sember version. example: `0.1.14`
+
+- `old_version_with_v`
+
+  Outputs the old Sember version with the `v` prefix. example: 'v0.1.14'
+
 ## Example Usage
 
 You can use action output by setting an `id` field to the step that `uses` this action. For example:
@@ -25,11 +33,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2.4.2
-        
       - name: Cargo Semver Update
         id: update
-        uses: lemonxah/cargo_semver_update@v1.0.3
-      
+        uses: CrabMatrix/cargo_semver_update@v1.0.3
       - name: Commit file
         uses: swinton/commit@v2.x
         env:
@@ -38,7 +44,6 @@ jobs:
           files: |
             Cargo.toml
           commit-message: Updating Cargo semver version to ${{ steps.update.outputs.new_version }} # commit message including the new version
-        
       - name: Commit tagger
         uses: tvdias/github-tagger@v0.0.2
         with:
