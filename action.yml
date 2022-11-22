@@ -1,4 +1,5 @@
 name: 'CM Cargo Semver Update'
+author: 'Urothis'
 branding:
   icon: 'at-sign'
   color: 'orange'

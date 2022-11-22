@@ -27,7 +27,7 @@ if [ $new != $old ]; then
     toml set --toml-path=Cargo.toml package.version $new
 fi
 
-echo "::set-output name=old_version::$old"
-echo "::set-output name=old_version_with_v::v$old"
-echo "::set-output name=new_version::$new"
-echo "::set-output name=new_version_with_v::v$new"
+echo "old_version=$old" >> $GITHUB_OUTPUT
+echo "old_version_with_v=v$old" >> $GITHUB_OUTPUT
+echo "new_version=$new" >> $GITHUB_OUTPUT
+echo "new_version_with_v=v$new" >> $GITHUB_OUTPUT
