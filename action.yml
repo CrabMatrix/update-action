@@ -1,0 +1,17 @@
+name: 'Cargo Semver Update'
+branding:
+  icon: 'at-sign'
+  color: 'orange'
+description: 'Update Cargo.toml version with Semver #major #minor #patch.'
+outputs:
+  new_version:
+    description: 'new semver version'
+  new_version_with_v:
+    description: 'new semver version with v'
+  old_version:
+    description: 'old semver version'
+  old_version_with_v:
+    description: 'old semver version with v'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
